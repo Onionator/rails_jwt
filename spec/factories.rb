@@ -5,6 +5,12 @@ factory :review do
   destination
 end
 
+factory :user do
+     username {"testy1"}
+     email {"testytesterson11@testing.com"}
+     password {"testpassword"}
+   end
+
 factory :destination do
   destination { Faker::Movies::HarryPotter.location }
   city { Faker::Address.city }
