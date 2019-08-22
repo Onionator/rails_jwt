@@ -1,16 +1,16 @@
 class Seed
   def self.begin
-    Destination.destroy_all
     Review.destroy_all
+    Destination.destroy_all
     seed = Seed.new
     seed.generate_destinations
   end
   def generate_destinations
-    25.times do |i|
+    50.times do |i|
       destination = Destination.create!(
-        destination: Faker::Games::Pokemon.location,
-        city: Faker::Nation.capital_city,
-        country: Faker::Games::Pokemon.location
+        destination: Faker::Space.star_cluster,
+        city: Faker::Games::Pokemon.location,
+        country: Faker::Address.country
       )
       puts "Destination #{i}: City is #{destination.city} and country is #{destination.country}."
       rand(30...273).times do |x|
