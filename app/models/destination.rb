@@ -13,4 +13,9 @@ class Destination < ApplicationRecord
   end
   where(id: most_reviewed.id)
 }
+
+  validates :destination, presence: true
+  validates :city, presence: true
+  validates :country, presence: true
+
 end
